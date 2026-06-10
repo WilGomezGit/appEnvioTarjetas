@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intercalar y Unir PDFs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="titleContainer">
+        <button class="home-button" onclick="location.href='../index.html'">Inicio</button>
+        <h1>Intercalar y Unir PDFs</h1>
+    </div>
+
+    <div class="file-button-container">
+        <label for="pdfFile1" class="file-label">Selecciona el archivo PDF de los Oficios</label>
+        <input type="file" id="pdfFile1" class="file-input" accept="application/pdf">
+
+        <label for="pdfFile2" class="file-label">Selecciona el archivo PDF de las Empresas</label>
+        <input type="file" id="pdfFile2" class="file-input" accept="application/pdf">
+
+        <div class="button-container">
+            <button class="button" onclick="intercalarPDFs()">Procesar</button>
+            <button class="button cancel-button" onclick="clearInputs()">Cancelar</button>
+        </div>
+    </div>
+
+   <div class="output-container">
+       <div id="message"></div> <!-- Aquí se mostrará el mensaje -->
+   </div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf-lib/1.17.1/pdf-lib.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html>

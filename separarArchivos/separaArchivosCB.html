@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Separador Archivos para Envios</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="titleContainer">
+        <button class="home-button" onclick="location.href='../index.html'"> Inicio </button>
+        <h1>Separador de Archivos CB | Para Envio de Tarjetas</h1>
+    </div>
+
+    <div class="file-button-container">
+        <input type="file" id="fileInput" class="file-input">
+		<div class="button-container">
+	        <button onclick="processFile()" class="action-button">Procesar</button>
+	        <button onclick="clearTable()" class="action-button">Cancelar</button>
+        </div>
+    </div>
+
+    <div class="table-container">
+        <div class="table-box">
+            <table id="dataTable" class="dataTable">
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>CEDULA</th>
+                        <th>TARJETA</th>
+                        <th>EMPRESA</th>
+                        <th>CANT</th>
+                    </tr>
+                </thead>
+                <tbody id="dataBody">
+                    <!-- Aquí se insertarán las filas de datos -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="export-buttons">
+        <button id="exportButton" class="export-button">Exportar a Excel</button>
+    </div>
+
+    <!-- Botón pequeño para ir al final de la página (en la esquina superior derecha) -->
+    <button class="scrollButton smallButton topRight" onclick="scrollToBottom()">Ir al Final</button>
+    <!-- Botón pequeño para subir (en la esquina inferior derecha) -->
+    <button class="scrollButton smallButton bottomRight" onclick="scrollToTop()">Subir</button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.2/xlsx.full.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <script src="scripts.js"></script>
+
+    <script>
+        // Función para desplazarse hacia el final de la página
+        function scrollToBottom() {
+            window.scrollTo({ top: document.body.scrollHeight, behavior: 'smooth' });
+        }
+
+        // Función para desplazarse hacia arriba de la página
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
